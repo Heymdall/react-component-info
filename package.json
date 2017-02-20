@@ -1,0 +1,12 @@
+{
+  "name": "react-component-info",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "decamelize": "^1.2.0",
+    "doctrine": "^2.0.0",
+    "react-docgen": "^2.13.0",
+    "uppercamelcase": "^1.1.0"
+  }
+}
