@@ -149,8 +149,8 @@ function prepareProps(props, customTypes, enums) {
     };
 }
 
-function getDocForFileContent(src, componentName) {
-    const componentInfo = reactDocs.parse(src);
+function getDocForFileContent(src, componentName, resolver, handlers) {
+    const componentInfo = reactDocs.parse(src, resolver, handlers);
     const description = doctrine.parse(componentInfo.description);
 
     if (description.tags && description.tags.length > 0) {
