@@ -8,5 +8,12 @@
     "doctrine": "^2.0.0",
     "react-docgen": "^2.13.0",
     "uppercamelcase": "^1.1.0"
+  },
+  "scripts": {
+    "release-patch": "npm version patch -m 'chore(*): patch version'",
+    "release-minor": "npm version minor -m 'chore(*): minor version'",
+    "release-major": "npm version major -m 'chore(*): major version'",
+    "version": "git fetch --tags",
+    "postversion": "git push origin master && git push --tags && npm publish"
   }
 }
