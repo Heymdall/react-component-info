@@ -6,7 +6,7 @@
   "dependencies": {
     "decamelize": "^1.2.0",
     "doctrine": "^2.0.0",
-    "react-docgen": "^2.13.0",
+    "react-docgen": "^2.15.0",
     "uppercamelcase": "^1.1.0"
   },
   "scripts": {
