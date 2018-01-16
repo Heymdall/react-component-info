@@ -119,17 +119,24 @@ function getType(type, propName: string, customTypes: CustomTypesDescription[], 
                 innerType: getType(type.value, propName, customTypes, enums)
             };
         case 'shape':
-            propName = camelCase(propName) + 'Type';
-            Object.keys(type.value).forEach(key => {
-                type.value[key].type = {
-                    name: type.value[key].name,
-                    value: type.value[key].value
-                };
-            });
-            customTypes.push({
-                name: propName,
-                props: prepareProps(type.value, customTypes, enums).props
-            });
+            propName = camelCase(propName.toString()) + 'Type';
+            if (typeof type.value === 'string') {
+                customTypes.push({
+                    name: propName,
+                    props: []
+                });
+            } else {
+                Object.keys(type.value).forEach(key => {
+                    type.value[key].type = {
+                        name: type.value[key].name,
+                        value: type.value[key].value
+                    };
+                });
+                customTypes.push({
+                    name: propName,
+                    props: prepareProps(type.value, customTypes, enums).props
+                });
+            }
 
             return { typeName: 'shape', name: propName };
         case 'enum':
